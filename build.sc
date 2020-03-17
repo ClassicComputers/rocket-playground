@@ -126,3 +126,16 @@ object sodor extends CommonModule {
 object boom extends CommonModule with SbtModule {
   override def moduleDeps = super.moduleDeps ++ Seq(chiseltest, rocketchip, inclusivecache, blocks, shells)
 }
+
+object dla extends CommonModule {
+  override def millSourcePath = super.millSourcePath / 'dla
+  override def moduleDeps = super.moduleDeps ++ Seq(chiseltest, rocketchip, inclusivecache, blocks, shells)
+  object tests extends Tests {
+    def ivyDeps = Agg(
+      ivy"org.scalatest::scalatest:latest.integration",
+      ivy"org.scalacheck::scalacheck:latest.integration",
+    )
+
+    def testFrameworks = Seq("org.scalatest.tools.Framework")
+  } 
+}

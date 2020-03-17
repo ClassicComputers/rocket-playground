@@ -40,3 +40,6 @@
 [submodule "boom"]
 	path = boom
 	url = https://github.com/riscv-boom/riscv-boom
+[submodule "dla"]
+	path = dla
+	url = https://github.com/SingularityKChen/dl_accelerator/
