@@ -35,7 +35,7 @@ object chiseltest extends CommonModule with SbtModule {
   override def ivyDeps = super.ivyDeps() ++ Agg(
     ivy"com.lihaoyi::utest:latest.integration",
     ivy"com.lihaoyi::os-lib:latest.integration",
-    ivy"org.scalatest::scalatest:latest.integration"
+    ivy"org.scalatest::scalatest:3.0.8",
   )
 
   object test extends Tests {
@@ -132,8 +132,8 @@ object dla extends CommonModule {
   override def moduleDeps = super.moduleDeps ++ Seq(chiseltest, rocketchip, inclusivecache, blocks, shells)
   object tests extends Tests {
     def ivyDeps = Agg(
-      ivy"org.scalatest::scalatest:latest.integration",
-      ivy"org.scalacheck::scalacheck:latest.integration",
+      ivy"org.scalatest::scalatest:3.0.8",
+      ivy"org.scalacheck::scalacheck:1.14.3",
     )
 
     def testFrameworks = Seq("org.scalatest.tools.Framework")
