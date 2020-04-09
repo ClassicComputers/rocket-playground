@@ -104,7 +104,7 @@ object testsocket extends CommonModule {
 }
 
 object playground extends CommonModule {
-  override def moduleDeps = super.moduleDeps ++ Seq(chiseltest, rocketchip, inclusivecache, blocks, shells)
+  override def moduleDeps = super.moduleDeps ++ Seq(chiseltest, rocketchip, inclusivecache, blocks, shells, diplomatictester)
 
   override def ivyDeps = Agg(
     ivy"com.lihaoyi::upickle:latest.integration",
@@ -138,4 +138,19 @@ object dla extends CommonModule {
 
     def testFrameworks = Seq("org.scalatest.tools.Framework")
   } 
+}
+
+object diplomatictester extends CommonModule {
+  override def moduleDeps = super.moduleDeps ++ Seq(chiseltest, rocketchip, myfirrtl)
+  def ivyDeps = Agg(
+    ivy"com.lihaoyi::utest:latest.integration",
+    ivy"com.lihaoyi::pprint:latest.integration"
+  )
+  object tests extends Tests {
+    def ivyDeps = Agg(
+      ivy"com.lihaoyi::utest:latest.integration",
+    )
+
+    def testFrameworks = Seq("utest.runner.Framework")
+  }
 }

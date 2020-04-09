@@ -43,3 +43,6 @@
 [submodule "dla"]
 	path = dla
 	url = https://github.com/SingularityKChen/dl_accelerator/
+[submodule "diplomatictester"]
+	path = diplomatictester
+	url = https://github.com/sequencer/diplomatictester
