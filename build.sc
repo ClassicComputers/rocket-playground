@@ -129,7 +129,7 @@ object boom extends CommonModule with SbtModule {
 
 object dla extends CommonModule {
   override def millSourcePath = super.millSourcePath / 'dla
-  override def moduleDeps = super.moduleDeps ++ Seq(chiseltest, rocketchip, inclusivecache, blocks, shells)
+  override def moduleDeps = super.moduleDeps ++ Seq(chiseltest, rocketchip, inclusivecache, blocks, shells, diplomatictester)
   object tests extends Tests {
     def ivyDeps = Agg(
       ivy"org.scalatest::scalatest:3.0.8",
