@@ -19,6 +19,8 @@ object mychisel3 extends chisel3.build.chisel3CrossModule("2.12.10") {
 trait CommonModule extends ScalaModule {
   def scalaVersion = "2.12.10"
 
+  def forkArgs = Seq("-Xmx40g")
+
   override def scalacOptions = Seq("-Xsource:2.11")
 
   override def moduleDeps: Seq[ScalaModule] = Seq(mychisel3)
