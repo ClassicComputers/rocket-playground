@@ -7,11 +7,11 @@ import mill.contrib.buildinfo.BuildInfo
 import $file.chisel3.build
 import $file.firrtl.build
 
-object myfirrtl extends firrtl.build.firrtlCrossModule("2.12.10") {
+object myfirrtl extends $file.firrtl.build.firrtlCrossModule("2.12.10") {
   override def millSourcePath = super.millSourcePath / 'firrtl
 }
 
-object mychisel3 extends chisel3.build.chisel3CrossModule("2.12.10") {
+object mychisel3 extends $file.chisel3.build.chisel3CrossModule("2.12.10") {
   override def millSourcePath = super.millSourcePath / 'chisel3
   def firrtlModule: Option[PublishModule] = Some(myfirrtl)
 }
